@@ -1,3 +1,39 @@
+#### Infrastructure as Code:
+- Process of provisioning and managing infrastructure using code.
+- Human readable and machine comsumable.
+> In AWS Two tools works as IaC:
+- CloudFormation
+- Cloud Development kit
+#### Benefits of Infra as code:
+- Visibility 
+- Stability
+- Scalability
+- Security
+- Transactional
+#### What is CloudFormation.
+- Infrastructure as code service for AWS.
+- Template to spin up AWS Infrastructure- Multiple Accounts, Dev, Stage, Prod, DR etc.
+- written in Json or YAML.
+- Free of Charge, `Only Pay for the Provisioned infrastructure`
+```
+##### Sample Template:
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  S3Bucket: 
+    Type: AWS::S3::Bucket 
+Outputs: 
+  BucketName: 
+    Value: !Ref 'S3Bucket'
+    Description: Name of the sample Amazon S3 Bucket.
+```
+#### CloudFormation Lingos:
+> Template:
+    - Blueprints for AWS Resources, which is written on Json or Yaml.
+> Stack:
+    - Stacks are created by submiiting Template, stacks can be created, updated and deleted.
+> Change Set:
+    - Summary of Proposed changes in Stack and How the change will impact on resources.
+
 #### Ways to Run CloudFormation:
 - Aws CloudFormation Console
 - CloudFormation API
